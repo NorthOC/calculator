@@ -7,15 +7,15 @@ body{
     text-align: center;
 }
 #calculator{
-    margin: 5% auto auto auto;
+    margin: 2% auto auto auto;
     background-color: #ff3c00 ;
     display: block;
     border-radius: 20px;
     padding: 10px 5px;
 }
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 450px) {
     #calculator {
-      max-width: 550px;
+      max-width: 500px;
     }
   }
 #display{
