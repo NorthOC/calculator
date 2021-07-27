@@ -47,10 +47,10 @@ body{
 .grid-container{
     display: grid;
     grid-template-areas:"clear clear . ." 
-                        "nine eight seven multiplys"
-                        "six five four plus"
+                        "seven eight nine multiplys"
+                        "six five four divide"
                         "three two one minus"
-                        "zeros dots equals divide";
+                        "zeros dots equals plus";
 
 }
 .grid-container > button {
