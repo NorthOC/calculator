@@ -1,47 +1,93 @@
 //Main function operations
-let currentOperator = null;
+let currentOperator = undefined;
+let prevOperator = undefined;
 let displayNum1 = 0;
+let num1;
+let num2;
 let displayNum2 = 0;
 
-function add(num1,num2) {
-    return num1 + num2;
+function prevOp(a,b){
+
+    if(prevOperator == "+"){
+        return a + b
+    } else if (prevOperator == "-"){
+        return a - b
+    } else if (prevOperator == "*"){
+        if (a == 0 || b == 0){
+            return 0;
+        }else{
+            return a * b
+        }
+    } else if (prevOperator == "/"){
+        if(b == 0){
+            alert("cannot divide by zero");
+            clear();
+            return display.textContent = 0;
+        }
+        return a / b;
+    }
+}
+function operation(sign){
+    if(prevOperator === undefined){
+        displayNum1 = parseInt(display.textContent);
+        num1 = displayNum1;
+        prevOperator = sign;
+
+    }else{
+        displayNum2 = parseInt(display.textContent);
+        num2 = displayNum2;
+        currentOperator = sign;
+        if(currentOperator == "="){
+            num1 = prevOp(num1, num2);
+            display.textContent = num1;
+            prevOperator = undefined;
+            currentOperator == undefined;
+        } else{
+            num1 = prevOp(num1, num2);
+            prevOperator = currentOperator;
+            display.textContent = num1;
+        }
+    }
     
 }
 
-function subtract(num1,num2) {
-    return num1 - num2;
+function add() {
+    operation("+")
 }
 
-function multiply(num1,num2) {
-    return num1 * num2;
+function subtract() {
+    operation("-")
 }
 
-function divide(num1,num2) {
-    return num1 / num2;
+function multiply() {
+    operation("*")
 }
 
-//Operation function
-
-function operate(num1, funcop, num2) {
-    if(funcop == add){
-        console.log(add(num1,num2));
-    }else if(funcop == subtract){
-        console.log(subtract(num1, num2))
-    }else if(funcop == multiply){
-        console.log(multiply(num1, num2))
-    }else if(funcop == divide){
-        console.log(divide(num1, num2))
-    }
+function divide() {
+    operation("/")
 }
+function equals(){
+    operation("=")
+}
+
 function clear() {
     display.textContent = "0";
     displayNum1 = 0;
     displayNum2 = 0;
-    currentOperator = null;  
+    currentOperator = undefined;
+    prevOperator = undefined;
+    num1 = 0;
+    num2 = 0;  
 }
 function check(num){
     if (display.textContent === "0"){
         display.textContent = `${num}`;
+    } else if(displayNum1 != 0){
+        display.textContent = `${num}`;
+        displayNum1 = 0;
+    } else if(displayNum2 != 0){
+        display.textContent = `${num}`;
+        displayNum2 = 0;
     } else{
         display.textContent += `${num}`;
     }
@@ -65,6 +111,6 @@ document.querySelector(".plus").addEventListener("click", add)
 document.querySelector(".minus").addEventListener("click", subtract)
 document.querySelector(".divide").addEventListener("click", divide)
 document.querySelector(".multiply").addEventListener("click", multiply)
-document.querySelector(".equals").addEventListener("click", operate)
+document.querySelector(".equals").addEventListener("click", equals)
 document.querySelector(".clear").addEventListener("click", clear)
 document.querySelector(".dot").addEventListener("click", dot)
