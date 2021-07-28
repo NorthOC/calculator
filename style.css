@@ -71,6 +71,9 @@ body{
     border-radius: 5px;
     text-decoration: none;
 }
+#plus, #minus, #multiply, #divide{
+    background-color: rgb(84, 160, 247);
+}
 .grid-container > button:hover{
     background-color: #9f96a7 ;
 }

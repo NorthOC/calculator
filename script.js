@@ -146,3 +146,16 @@ document.querySelector(".multiply").addEventListener("click", multiply)
 document.querySelector(".equals").addEventListener("click", equals)
 document.querySelector(".clear").addEventListener("click", clear)
 document.querySelector(".dot").addEventListener("click", dot)
+
+//added delete with Backspace
+document.addEventListener("keydown", function(e){
+    console.log(`${e.code}`)
+    if (e.code == "Backspace"){
+        if (display.textContent != 0) {
+            display.textContent = display.textContent.slice(0, -1);
+            if(display.textContent == ""){
+                display.textContent = 0;
+            }
+        }
+    }
+})
