@@ -1,10 +1,12 @@
-//Main function operations
+//Variables used in the calculator
 let currentOperator = undefined;
 let prevOperator = undefined;
 let displayNum1 = 0;
 let num1;
 let num2;
 let displayNum2 = 0;
+
+//a function which checks for an operator and applies the correct operator
 
 function prevOp(a,b){
 
@@ -27,6 +29,8 @@ function prevOp(a,b){
         return a / b;
     }
 }
+//from 0 to 100, this is what happens after clicking an operator
+
 function operation(sign){
     if(prevOperator === undefined){
         displayNum1 = parseInt(display.textContent);
@@ -51,6 +55,7 @@ function operation(sign){
     
 }
 
+//shorted functions
 function add() {
     operation("+")
 }
@@ -69,6 +74,7 @@ function divide() {
 function equals(){
     operation("=")
 }
+//clears the contents as well as display
 
 function clear() {
     display.textContent = "0";
@@ -79,6 +85,8 @@ function clear() {
     num1 = 0;
     num2 = 0;  
 }
+//in case a user wants to write zeros randomly
+
 function check(num){
     if (display.textContent === "0"){
         display.textContent = `${num}`;
@@ -92,10 +100,15 @@ function check(num){
         display.textContent += `${num}`;
     }
 }
+
+//puts a dot for decimals 
+
 function dot() {
     display.textContent += "."
     }
-//selecting buttons and display
+
+//selecting buttons and display, adding on click events
+
 const display = document.getElementById("display");
 document.querySelector(".zero").addEventListener("click", function(){check(0)})
 document.querySelector(".one").addEventListener("click", function(){check(1)})
