@@ -149,7 +149,6 @@ document.querySelector(".dot").addEventListener("click", dot)
 
 //added delete with Backspace
 document.addEventListener("keydown", function(e){
-    console.log(`${e.code}`)
     if (e.code == "Backspace"){
         if (display.textContent != 0) {
             display.textContent = display.textContent.slice(0, -1);
@@ -159,3 +158,25 @@ document.addEventListener("keydown", function(e){
         }
     }
 })
+
+//keyboard support
+
+document.addEventListener("keydown", function(e){if (e.code == "Numpad0"){check(0)}})
+document.addEventListener("keydown", function(e){if (e.code == "Numpad1"){check(1)}})
+document.addEventListener("keydown", function(e){if (e.code == "Numpad2"){check(2)}})
+document.addEventListener("keydown", function(e){if (e.code == "Numpad3"){check(3)}})
+document.addEventListener("keydown", function(e){if (e.code == "Numpad4"){check(4)}})
+document.addEventListener("keydown", function(e){if (e.code == "Numpad5"){check(5)}})
+document.addEventListener("keydown", function(e){if (e.code == "Numpad6"){check(6)}})
+document.addEventListener("keydown", function(e){if (e.code == "Numpad7"){check(7)}})
+document.addEventListener("keydown", function(e){if (e.code == "Numpad8"){check(8)}})
+document.addEventListener("keydown", function(e){if (e.code == "Numpad9"){check(9)}})
+document.addEventListener("keydown", function(e){if (e.code == "NumpadDecimal"){dot()}})
+document.addEventListener("keydown", function(e){if (e.code == "NumpadEnter"){equals()}})
+document.addEventListener("keydown", function(e){if (e.code == "Enter"){equals()}})
+document.addEventListener("keydown", function(e){if (e.code == "Equal"){equals()}})
+document.addEventListener("keydown", function(e){if (e.code == "KeyC"){clear()}})
+document.addEventListener("keydown", function(e){if (e.code == "NumpadAdd"){add()}})
+document.addEventListener("keydown", function(e){if (e.code == "NumpadSubtract"){subtract()}})
+document.addEventListener("keydown", function(e){if (e.code == "NumpadMultiply"){multiply()}})
+document.addEventListener("keydown", function(e){if (e.code == "NumpadDivide"){divide()}})
