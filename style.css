@@ -8,11 +8,11 @@ body{
 }
 #calculator{
     margin: 2% auto auto auto;
-    background-color: #242c3d ;
+    background-color: #3c4966 ;
     display: block;
     border-radius: 20px;
     padding: 10px 5px;
-    box-shadow: 3px 2px 3px 1px rgba(0, 0, 0, 0.233);
+    box-shadow: 3px 2px 3px 3px rgba(0, 0, 0, 0.233);
 }
 @media only screen and (min-width: 450px) {
     #calculator {
@@ -25,7 +25,7 @@ body{
     margin: 20px 5px;
     padding: 5px 20px 5px 5px;
     font-size: 50px;
-    box-shadow: 0px 0px 0px 1px black;
+    box-shadow: 0px 0px 0px 1px rgb(49, 48, 48);
     border-radius: 5px;
 }
 @media (max-width: 450px){
@@ -80,3 +80,28 @@ body{
 .grid-container > button:hover{
     background-color: #bbb5c0 ;
 }
+footer{
+    margin-top: 25px;
+    font-size: 25px;
+}
+@media screen and (orientation:landscape) {
+    #calculator{
+        height: 300px;
+        margin-top: 0px;
+    }
+    body{
+        margin-top: 0px;
+    }
+    #display{
+        font-size: 25px;
+    }
+    .grid-container > button{
+        margin: 1px;
+        padding: 7px;
+        width: auto;
+        height: auto;
+    }
+    footer{
+        display: none;
+    }
+ }
