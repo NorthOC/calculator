@@ -1,3 +1,5 @@
-This is a repo for my functional calculator
-It works by using functions written in js and using html elements(operators) to activate them
-Feel free to give it a spin @ northoc.github.io/calculator
+# JS Calculator
+
+Hi! This is one of those rite of passage projects that we all go through. Also, my first attempt at adding keyboard support via event listeners.
+
+Take a peek: [Click Here!](https://northoc.github.io/calculator/)
