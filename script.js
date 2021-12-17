@@ -182,7 +182,7 @@ document.addEventListener("keydown", function(e){if (e.code == "Digit7"){check(7
 document.addEventListener("keydown", function(e){if (e.code == "Digit8"){check(8)}})
 document.addEventListener("keydown", function(e){if (e.code == "Digit9"){check(9)}})
 document.addEventListener("keydown", function(e){if (e.code == "NumpadDecimal"){dot()}})
-document.addEventListener("keydown", function(e){if (e.code == "Period"){dot()}})
+document.addEventListener("keydown", function(e){if (e.key == "."){dot()}})
 document.addEventListener("keydown", function(e){if (e.code == "NumpadEnter"){equals()}})
 document.addEventListener("keydown", function(e){if (e.code == "Enter"){equals()}})
 document.addEventListener("keydown", function(e){if (e.code == "Equal"){equals()}})
